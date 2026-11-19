@@ -1,0 +1,65 @@
+.steps { display: flex; gap: 8px; margin-bottom: 18px; overflow: auto; padding-bottom: 4px; }
+.step {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--muted); white-space: nowrap;
+}
+.step i {
+  width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--bg-2); font-style: normal; font-size: 12px;
+}
+.step.is-on { color: var(--text); border-color: rgba(124, 92, 252, 0.45); background: var(--accent-soft); }
+.step.is-done i { background: var(--accent); color: white; }
+.format-grid { grid-template-columns: repeat(3, 1fr); }
+.format-card { padding: 14px; text-align: left; color: var(--text); }
+.format-card small { display: block; color: var(--muted); margin-top: 6px; }
+.format-card.is-on { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(124, 92, 252, 0.15); }
+.picker { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.picker-list { max-height: 360px; overflow: auto; display: flex; flex-direction: column; gap: 6px; }
+.pick {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+  padding: 8px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-2);
+}
+.pick.is-in { opacity: 0.45; }
+.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+.summary div { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.summary span { display: block; color: var(--muted); font-size: 12px; }
+.tabs { display: flex; gap: 6px; overflow: auto; margin-bottom: 16px; }
+.tab {
+  border: 1px solid transparent; background: transparent; color: var(--muted);
+  border-radius: 999px; padding: 8px 12px; white-space: nowrap;
+}
+.tab.is-on { background: var(--card); border-color: var(--line); color: var(--text); }
+.detail-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; }
+.bracket-scroll { overflow-x: auto; padding-bottom: 8px; }
+.bracket { display: flex; align-items: stretch; gap: 8px; min-height: 420px; }
+.bracket-round { width: 240px; flex: 0 0 240px; display: flex; flex-direction: column; gap: 10px; }
+.bracket-col { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 12px; }
+.round-label { color: var(--muted); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.bmatch {
+  width: 100%; text-align: left; padding: 8px; position: relative; color: var(--text);
+}
+.bmatch::after {
+  content: ""; position: absolute; right: -20px; top: 50%; width: 20px; height: 2px;
+  background: rgba(124, 92, 252, 0.45);
+}
+.bracket-round:last-child .bmatch::after, .champion-col .bmatch::after { display: none; }
+.bslot { display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; align-items: center; padding: 6px; border-radius: 10px; }
+.bslot + .bslot { margin-top: 4px; }
+.bslot.is-win { background: var(--mint-soft); }
+.bslot.is-loss { opacity: 0.62; }
+.bscore { font-variant-numeric: tabular-nums; font-weight: 700; }
+.bmeta { color: var(--muted); font-size: 11px; padding: 4px 6px 0; }
+.champion-card { padding: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.section-block + .section-block { margin-top: 18px; }
+.fixture { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.fixture .sides { flex: 1; display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+.fixture .side { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.fixture .side.away { justify-content: flex-end; text-align: right; }
+.score-pill { font-family: var(--display); font-size: 18px; min-width: 72px; text-align: center; }
+.rules-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rule { padding: 12px; border-radius: 14px; background: var(--bg-2); border: 1px solid var(--line); }
+.rule span { display: block; color: var(--muted); font-size: 12px; }
+.preview-cover { height: 140px; border-radius: 16px; margin-bottom: 12px; border: 1px solid var(--line); }
+.member-checks { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow: auto; }
+.file-btn { position: relative; overflow: hidden; align-self: flex-start; width: fit-content; }
+.file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }

@@ -1,0 +1,42 @@
+@media (max-width: 1100px) {
+  .stat-grid, .format-grid, .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid, .grid-2, .detail-grid, .calendar, .settings-grid, .picker, .summary { grid-template-columns: 1fr; }
+  .entity-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 960px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0;
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+    width: min(84vw, 320px);
+  }
+  body.nav-open .sidebar { transform: none; }
+  body.nav-open .nav-backdrop { display: block; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 25; }
+  .only-mobile { display: grid; }
+  .view { width: min(100% - 32px, 1180px); }
+  .topbar { padding: 12px 16px; }
+  .profile-chip span { display: none; }
+}
+
+@media (max-width: 720px) {
+  h1, .welcome h1 { font-size: 28px; }
+  .page-head, .welcome { flex-direction: column; align-items: stretch; }
+  .stat-grid, .card-grid, .entity-grid, .format-grid, .rank-podium, .form-grid, .rules-list { grid-template-columns: 1fr; }
+  .topbar { flex-wrap: wrap; }
+  .search { order: 5; flex: 1 1 100%; max-width: none; }
+  .fixture { flex-direction: column; align-items: stretch; }
+  .score-grid { grid-template-columns: 1fr; }
+  .bracket { min-height: 0; }
+  .hero { min-height: 180px; }
+  .quick-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .sides { grid-template-columns: 1fr !important; }
+  .fixture .side.away { justify-content: flex-start; text-align: left; }
+  .modal-foot { flex-direction: column-reverse; }
+  .modal-foot .btn { width: 100%; }
+}
